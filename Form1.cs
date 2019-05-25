@@ -914,25 +914,7 @@ namespace Seminar
                 
 
                 OnGameEnded("e");
-
-                /*/
-                    DialogResult dialog = MessageBox.Show("new game", "exit", MessageBoxButtons.YesNo);
-
-                       
-
-                    if (dialog == DialogResult.Yes)
-                    {
-                        p1.punti = 0;
-                        p2.punti = 0;
-                    OnFormUnsub("Form");                    
-                  
-                    }
-                else
-                    {
-                        Application.Exit();
-                    }
-                    /*/
-                
+  
             }
             else if (p2.punti > 2)
             {

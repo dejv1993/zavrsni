@@ -1937,349 +1937,359 @@ namespace Seminar
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
-            p1.turn = false;
-            p2.turn = true;
-            label4.Visible = true;
-            label5.Visible = false;
-            card_trown++;
-
-
-            OnMOuseClicked(pictureBox1.Name.ToString());
-            this.potez1.Add(pictureBox1.Name.ToString());
-            this.poz1.Add(0);
-            string slika = p1.ruka[0].ToString();
-            if(pictureBox14.Tag==null)
+            if (pictureBox1.Tag != null)
             {
-                first_played = true;
-            }
+                p1.turn = false;
+                p2.turn = true;
+                label4.Visible = true;
+                label5.Visible = false;
+                card_trown++;
 
-            if (i < max)
-            {
-                if (pictureBox10.Tag == null)
-                {
-                    pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox10.Tag = (Cards)p1.ruka[0];
-                    c1 = (Cards)pictureBox10.Tag;
-                }
-                else 
-                {
-                    pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox11.Tag = (Cards)p1.ruka[0];
-                    c2 = (Cards)pictureBox11.Tag;
-                }
-                pictureBox1.Tag = null;
-                pictureBox1.Image = null;
 
-            }
-            else if (i == max)
-            {
-                if (pictureBox10.Tag == null)
+                OnMOuseClicked(pictureBox1.Name.ToString());
+                this.potez1.Add(pictureBox1.Name.ToString());
+                this.poz1.Add(0);
+                string slika = p1.ruka[0].ToString();
+                if (pictureBox14.Tag == null)
                 {
-                    pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox10.Tag = (Cards)p1.ruka[0];
-                    c1 = (Cards)pictureBox10.Tag;
+                    first_played = true;
                 }
+
+                if (i < max)
+                {
+                    if (pictureBox10.Tag == null)
+                    {
+                        pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox10.Tag = (Cards)p1.ruka[0];
+                        c1 = (Cards)pictureBox10.Tag;
+                    }
+                    else
+                    {
+                        pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox11.Tag = (Cards)p1.ruka[0];
+                        c2 = (Cards)pictureBox11.Tag;
+                    }
+                    pictureBox1.Tag = null;
+                    pictureBox1.Image = null;
+
+                }
+                else if (i == max)
+                {
+                    if (pictureBox10.Tag == null)
+                    {
+                        pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox10.Tag = (Cards)p1.ruka[0];
+                        c1 = (Cards)pictureBox10.Tag;
+                    }
+                    else
+                    {
+                        pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox11.Tag = (Cards)p1.ruka[0];
+                        c2 = (Cards)pictureBox11.Tag;
+                    }
+                    pictureBox1.Tag = null;
+                    pictureBox1.Image = null;
+
+
+
+                }
+
+                //kada dode za podilit kartu za igru(zadnju) 
                 else
                 {
-                    pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox11.Tag = (Cards)p1.ruka[0];
-                    c2 = (Cards)pictureBox11.Tag;
+                    if (pictureBox10.Tag == null)
+                    {
+                        pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox10.Tag = (Cards)p1.ruka[0];
+                        c1 = (Cards)pictureBox10.Tag;
+                    }
+                    else
+                    {
+                        pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox11.Tag = (Cards)p1.ruka[0];
+                        c2 = (Cards)pictureBox11.Tag;
+                    }
+                    pictureBox1.Tag = null;
+                    pictureBox1.Image = null;
                 }
-                pictureBox1.Tag = null;
-                pictureBox1.Image = null;
-
-
-
-            }
-
-            //kada dode za podilit kartu za igru(zadnju) 
-            else
-            {
-                if (pictureBox10.Tag == null)
+                if (card_trown == 4)
                 {
-                    pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox10.Tag = (Cards)p1.ruka[0];
-                    c1 = (Cards)pictureBox10.Tag;
+                    card_trown = 0;
+                    pokupi();
                 }
-                else
+                if (p1.turn == false)
                 {
-                    pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox11.Tag = (Cards)p1.ruka[0];
-                    c2 = (Cards)pictureBox11.Tag;
+                    panel1.Enabled = false;
+
                 }
-                pictureBox1.Tag = null;
-                pictureBox1.Image = null;
-            }
-            if (card_trown == 4)
-            {
-                card_trown = 0;
-                pokupi();
-            }
-            if (p1.turn == false)
-            {
-                panel1.Enabled = false;
+
+
 
             }
-
-
-
-
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            p1.turn = false;
-            p2.turn = true;
-            label4.Visible = true;
-            label5.Visible = false;
-            this.potez1.Add(pictureBox2.Name.ToString());
-            this.poz1.Add(1);
-            OnMOuseClicked(pictureBox2.Name.ToString());
-            card_trown++;
-            string slika = p1.ruka[1].ToString();
-            if (pictureBox14.Tag == null)
+            if (pictureBox2.Tag != null)
             {
-                first_played = true;
-            }
-            if (i < max)
-            {
-                if (pictureBox10.Tag == null)
+                p1.turn = false;
+                p2.turn = true;
+                label4.Visible = true;
+                label5.Visible = false;
+                this.potez1.Add(pictureBox2.Name.ToString());
+                this.poz1.Add(1);
+                OnMOuseClicked(pictureBox2.Name.ToString());
+                card_trown++;
+                string slika = p1.ruka[1].ToString();
+                if (pictureBox14.Tag == null)
                 {
-                    pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox10.Tag = (Cards)p1.ruka[1];
-                    c1 = (Cards)pictureBox10.Tag;
+                    first_played = true;
+                }
+                if (i < max)
+                {
+                    if (pictureBox10.Tag == null)
+                    {
+                        pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox10.Tag = (Cards)p1.ruka[1];
+                        c1 = (Cards)pictureBox10.Tag;
+                    }
+                    else
+                    {
+                        pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox11.Tag = (Cards)p1.ruka[1];
+                        c2 = (Cards)pictureBox11.Tag;
+                    }
+                    pictureBox2.Tag = null;
+                    pictureBox2.Image = null;
+                }
+                else if (i == max)
+                {
+                    if (pictureBox10.Tag == null)
+                    {
+                        pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox10.Tag = (Cards)p1.ruka[1];
+                        c1 = (Cards)pictureBox10.Tag;
+                    }
+                    else
+                    {
+                        pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox11.Tag = (Cards)p1.ruka[1];
+                        c2 = (Cards)pictureBox11.Tag;
+                    }
+                    pictureBox2.Tag = null;
+                    pictureBox2.Image = null;
+
+
+
+
                 }
                 else
                 {
-                    pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox11.Tag = (Cards)p1.ruka[1];
-                    c2 = (Cards)pictureBox11.Tag;
+                    if (pictureBox10.Tag == null)
+                    {
+                        pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox10.Tag = (Cards)p1.ruka[1];
+                        c1 = (Cards)pictureBox10.Tag;
+                    }
+                    else
+                    {
+                        pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox11.Tag = (Cards)p1.ruka[1];
+                        c2 = (Cards)pictureBox11.Tag;
+                    }
+                    pictureBox2.Tag = null;
+                    pictureBox2.Image = null;
+
                 }
-                pictureBox2.Tag = null;
-                pictureBox2.Image = null;
-            }
-            else if (i == max)
-            {
-                if (pictureBox10.Tag == null)
+                if (card_trown == 4)
                 {
-                    pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox10.Tag = (Cards)p1.ruka[1];
-                    c1 = (Cards)pictureBox10.Tag;
+                    card_trown = 0;
+                    pokupi();
                 }
-                else
+                if (p1.turn == false)
                 {
-                    pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox11.Tag = (Cards)p1.ruka[1];
-                    c2 = (Cards)pictureBox11.Tag;
+                    panel1.Enabled = false;
+
                 }
-                pictureBox2.Tag = null;
-                pictureBox2.Image = null;
-
-
-
-              
-            }
-            else
-            {
-                if (pictureBox10.Tag == null)
-                {
-                    pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox10.Tag = (Cards)p1.ruka[1];
-                    c1 = (Cards)pictureBox10.Tag;
-                }
-                else
-                {
-                    pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox11.Tag = (Cards)p1.ruka[1];
-                    c2 = (Cards)pictureBox11.Tag;
-                }
-                pictureBox2.Tag = null;
-                pictureBox2.Image = null;
 
             }
-            if (card_trown ==4)
-            {
-                card_trown = 0;
-                pokupi();
-            }
-            if (p1.turn == false)
-            {
-                panel1.Enabled = false;
-
-            }
-
-
         }
 
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            p1.turn = false;
-            p2.turn = true;
-            label4.Visible = true;
-            label5.Visible = false;
-            card_trown++;
-
-            this.potez1.Add(pictureBox3.Name.ToString());
-            this.poz1.Add(2);
-            OnMOuseClicked(pictureBox3.Name.ToString());
-
-            string slika = p1.ruka[2].ToString();
-            if (pictureBox14.Tag == null)
+            if (pictureBox3.Tag != null)
             {
-                first_played = true;
-            }
-            if (i < max)
-            {
-                if (pictureBox10.Tag == null)
+                p1.turn = false;
+                p2.turn = true;
+                label4.Visible = true;
+                label5.Visible = false;
+                card_trown++;
+
+                this.potez1.Add(pictureBox3.Name.ToString());
+                this.poz1.Add(2);
+                OnMOuseClicked(pictureBox3.Name.ToString());
+
+                string slika = p1.ruka[2].ToString();
+                if (pictureBox14.Tag == null)
                 {
-                    pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox10.Tag = (Cards)p1.ruka[2];
-                    c1 = (Cards)pictureBox10.Tag;
+                    first_played = true;
+                }
+                if (i < max)
+                {
+                    if (pictureBox10.Tag == null)
+                    {
+                        pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox10.Tag = (Cards)p1.ruka[2];
+                        c1 = (Cards)pictureBox10.Tag;
+                    }
+                    else
+                    {
+                        pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox11.Tag = (Cards)p1.ruka[2];
+                        c2 = (Cards)pictureBox11.Tag;
+                    }
+                    pictureBox3.Tag = null;
+                    pictureBox3.Image = null;
+                }
+                else if (i == max)
+                {
+                    if (pictureBox10.Tag == null)
+                    {
+                        pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox10.Tag = (Cards)p1.ruka[2];
+                        c1 = (Cards)pictureBox10.Tag;
+                    }
+                    else
+                    {
+                        pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox11.Tag = (Cards)p1.ruka[2];
+                        c2 = (Cards)pictureBox11.Tag;
+                    }
+                    pictureBox3.Tag = null;
+                    pictureBox3.Image = null;
+
+
+
+
                 }
                 else
                 {
-                    pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox11.Tag = (Cards)p1.ruka[2];
-                    c2 = (Cards)pictureBox11.Tag;
+                    if (pictureBox10.Tag == null)
+                    {
+                        pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox10.Tag = (Cards)p1.ruka[2];
+                        c1 = (Cards)pictureBox10.Tag;
+                    }
+                    else
+                    {
+                        pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox11.Tag = (Cards)p1.ruka[2];
+                        c2 = (Cards)pictureBox11.Tag;
+                    }
+                    pictureBox3.Tag = null;
+                    pictureBox3.Image = null;
+
                 }
-                pictureBox3.Tag = null;
-                pictureBox3.Image = null;
-            }
-            else if (i == max)
-            {
-                if (pictureBox10.Tag == null)
+                if (card_trown == 4)
                 {
-                    pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox10.Tag = (Cards)p1.ruka[2];
-                    c1 = (Cards)pictureBox10.Tag;
+                    card_trown = 0;
+                    pokupi();
                 }
-                else
+                if (p1.turn == false)
                 {
-                    pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox11.Tag = (Cards)p1.ruka[2];
-                    c2 = (Cards)pictureBox11.Tag;
+                    panel1.Enabled = false;
+
                 }
-                pictureBox3.Tag = null;
-                pictureBox3.Image = null;
-
-
-
-
-            }
-            else
-            {
-                if (pictureBox10.Tag == null)
-                {
-                    pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox10.Tag = (Cards)p1.ruka[2];
-                    c1 = (Cards)pictureBox10.Tag;
-                }
-                else
-                {
-                    pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox11.Tag = (Cards)p1.ruka[2];
-                    c2 = (Cards)pictureBox11.Tag;
-                }
-                pictureBox3.Tag = null;
-                pictureBox3.Image = null;
-
-            }
-            if (card_trown == 4)
-            {
-                card_trown = 0;
-                pokupi();
-            }
-            if (p1.turn == false)
-            {
-                panel1.Enabled = false;
-
             }
 
         }
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            p1.turn = false;
-            p2.turn = true;
-            label4.Visible = true;
-            label5.Visible = false;
-            card_trown++;
-
-            this.potez1.Add(pictureBox4.Name.ToString());
-            this.poz1.Add(3);
-            OnMOuseClicked(pictureBox4.Name.ToString());
-
-            string slika = p1.ruka[3].ToString();
-            if (pictureBox14.Tag == null)
+            if (pictureBox4.Tag != null)
             {
-                first_played = true;
-            }
+                p1.turn = false;
+                p2.turn = true;
+                label4.Visible = true;
+                label5.Visible = false;
+                card_trown++;
 
-            if (i < max)
-            {
-                if (pictureBox10.Tag == null)
+                this.potez1.Add(pictureBox4.Name.ToString());
+                this.poz1.Add(3);
+                OnMOuseClicked(pictureBox4.Name.ToString());
+
+                string slika = p1.ruka[3].ToString();
+                if (pictureBox14.Tag == null)
                 {
-                    pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox10.Tag = (Cards)p1.ruka[3];
-                    c1 = (Cards)pictureBox10.Tag;
+                    first_played = true;
+                }
+
+                if (i < max)
+                {
+                    if (pictureBox10.Tag == null)
+                    {
+                        pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox10.Tag = (Cards)p1.ruka[3];
+                        c1 = (Cards)pictureBox10.Tag;
+                    }
+                    else
+                    {
+                        pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox11.Tag = (Cards)p1.ruka[3];
+                        c2 = (Cards)pictureBox11.Tag;
+                    }
+                    pictureBox4.Tag = null;
+                    pictureBox4.Image = null;
+                }
+                else if (i == max)
+                {
+                    if (pictureBox10.Tag == null)
+                    {
+                        pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox10.Tag = (Cards)p1.ruka[3];
+                        c1 = (Cards)pictureBox10.Tag;
+                    }
+                    else
+                    {
+                        pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox11.Tag = (Cards)p1.ruka[3];
+                        c2 = (Cards)pictureBox11.Tag;
+                    }
+                    pictureBox4.Tag = null;
+                    pictureBox4.Image = null;
+
+
+
+
                 }
                 else
                 {
-                    pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox11.Tag = (Cards)p1.ruka[3];
-                    c2 = (Cards)pictureBox11.Tag;
+                    if (pictureBox10.Tag == null)
+                    {
+                        pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox10.Tag = (Cards)p1.ruka[3];
+                        c1 = (Cards)pictureBox10.Tag;
+                    }
+                    else
+                    {
+                        pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
+                        pictureBox11.Tag = (Cards)p1.ruka[3];
+                        c2 = (Cards)pictureBox11.Tag;
+                    }
+                    pictureBox4.Tag = null;
+                    pictureBox4.Image = null;
+
                 }
-                pictureBox4.Tag = null;
-                pictureBox4.Image = null;
-            }
-            else if (i == max)
-            {
-                if (pictureBox10.Tag == null)
+                if (card_trown == 4)
                 {
-                    pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox10.Tag = (Cards)p1.ruka[3];
-                    c1 = (Cards)pictureBox10.Tag;
+                    card_trown = 0;
+                    pokupi();
                 }
-                else
+                if (p1.turn == false)
                 {
-                    pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox11.Tag = (Cards)p1.ruka[3];
-                    c2 = (Cards)pictureBox11.Tag;
+                    panel1.Enabled = false;
+
                 }
-                pictureBox4.Tag = null;
-                pictureBox4.Image = null;
-
-
-
-
-            }
-            else
-            {
-                if (pictureBox10.Tag == null)
-                {
-                    pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox10.Tag = (Cards)p1.ruka[3];
-                    c1 = (Cards)pictureBox10.Tag;
-                }
-                else
-                {
-                    pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
-                    pictureBox11.Tag = (Cards)p1.ruka[3];
-                    c2 = (Cards)pictureBox11.Tag;
-                }
-                pictureBox4.Tag = null;
-                pictureBox4.Image = null;
-
-            }
-            if (card_trown == 4)
-            {
-                card_trown = 0;
-                pokupi();
-            }
-            if (p1.turn == false)
-            {
-                panel1.Enabled = false;
-
             }
 
         }
