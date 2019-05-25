@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3e1be3d04ab0406da0b0c77044be48bb" Name="Diagram1" ZoomLevel="70">
+        <EntityTypeShape EntityType="PlayersModel.Game" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlayersModel.Player" Width="1.5" PointX="3.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlayersModel.database_firewall_rules" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="PlayersModel.PlayerGame" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PlayersModel.PlayerRole" Width="1.5" PointX="6.75" PointY="2.125" />
+        <EntityTypeShape EntityType="PlayersModel.Role" Width="1.5" PointX="4.875" PointY="4.875" />
+        <EntityTypeShape EntityType="PlayersModel.sysdiagram" Width="1.5" PointX="6.875" PointY="5.5" />
+        <AssociationConnector Association="PlayersModel.FK_PlayerRole_Player" />
+        <AssociationConnector Association="PlayersModel.FK_PlayerRole_Role" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

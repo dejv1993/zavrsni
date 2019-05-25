@@ -1,0 +1,87 @@
+C:\Users\icoric\source\repos\Seminar\Seminar\bin\Debug\Seminar.exe.config
+C:\Users\icoric\source\repos\Seminar\Seminar\bin\Debug\Seminar.exe
+C:\Users\icoric\source\repos\Seminar\Seminar\bin\Debug\Seminar.pdb
+C:\Users\icoric\source\repos\Seminar\Seminar\obj\Debug\Seminar.Form1.resources
+C:\Users\icoric\source\repos\Seminar\Seminar\obj\Debug\Seminar.Properties.Resources.resources
+C:\Users\icoric\source\repos\Seminar\Seminar\obj\Debug\Seminar.csproj.GenerateResource.cache
+C:\Users\icoric\source\repos\Seminar\Seminar\obj\Debug\Seminar.csproj.CoreCompileInputs.cache
+C:\Users\icoric\source\repos\Seminar\Seminar\obj\Debug\Seminar.exe
+C:\Users\icoric\source\repos\Seminar\Seminar\obj\Debug\Seminar.pdb
+C:\Users\icoric\source\repos\Seminar\Seminar\obj\Debug\Seminar.csprojResolveAssemblyReference.cache
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\bin\Debug\Seminar.exe
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\bin\Debug\Newtonsoft.Json.dll
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\bin\Debug\SimpleTCP.dll
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\bin\Debug\Seminar.pdb
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\bin\Debug\Seminar.exe.config
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\bin\Debug\Newtonsoft.Json.xml
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\obj\Debug\Seminar.csprojResolveAssemblyReference.cache
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\obj\Debug\Seminar.Client.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\obj\Debug\Seminar.Form1.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\obj\Debug\Seminar.Properties.Resources.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\obj\Debug\Seminar.Server.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\obj\Debug\Seminar.ServerClient.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\obj\Debug\Seminar.csproj.GenerateResource.cache
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\obj\Debug\Seminar.csproj.CoreCompileInputs.cache
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\obj\Debug\Seminar.csproj.CopyComplete
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\obj\Debug\Seminar.exe
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\Seminar\obj\Debug\Seminar.pdb
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\bin\Debug\Seminar.exe.config
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\bin\Debug\Seminar.exe
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\bin\Debug\Seminar.pdb
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\bin\Debug\Newtonsoft.Json.dll
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\bin\Debug\SimpleTCP.dll
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\bin\Debug\Newtonsoft.Json.xml
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\obj\Debug\Seminar.csprojResolveAssemblyReference.cache
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\obj\Debug\Seminar.Client.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\obj\Debug\Seminar.Form1.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\obj\Debug\Seminar.Properties.Resources.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\obj\Debug\Seminar.Server.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\obj\Debug\Seminar.ServerClient.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\obj\Debug\Seminar.csproj.GenerateResource.cache
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\obj\Debug\Seminar.csproj.CoreCompileInputs.cache
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\obj\Debug\Seminar.csproj.CopyComplete
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\obj\Debug\Seminar.exe
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Seminar\obj\Debug\Seminar.pdb
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\bin\Debug\Seminar.exe.config
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\bin\Debug\Seminar.exe
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\bin\Debug\Seminar.pdb
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\bin\Debug\Newtonsoft.Json.dll
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\bin\Debug\SimpleTCP.dll
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\bin\Debug\Newtonsoft.Json.xml
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\obj\Debug\Seminar.csprojResolveAssemblyReference.cache
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\obj\Debug\Seminar.Client.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\obj\Debug\Seminar.Form1.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\obj\Debug\Seminar.Properties.Resources.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\obj\Debug\Seminar.Server.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\obj\Debug\Seminar.ServerClient.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\obj\Debug\Seminar.csproj.GenerateResource.cache
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\obj\Debug\Seminar.csproj.CoreCompileInputs.cache
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\obj\Debug\Seminar.csproj.CopyComplete
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\obj\Debug\Seminar.exe
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\Seminar\obj\Debug\Seminar.pdb
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\Seminar.exe.config
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\Seminar.exe
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\Seminar.pdb
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\EntityFramework.dll
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\Newtonsoft.Json.dll
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\SimpleTCP.dll
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\EntityFramework.xml
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\Newtonsoft.Json.xml
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.Client.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.Form1.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.Login.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.Properties.Resources.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.GameType.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.Server.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.ServerClient.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.ServerList.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.WinnerForm.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.csproj.GenerateResource.cache
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.csproj.CoreCompileInputs.cache
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.csproj.CopyComplete
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.exe
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.pdb
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.csprojResolveAssemblyReference.cache
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.GameFour.resources
