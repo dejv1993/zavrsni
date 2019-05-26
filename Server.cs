@@ -57,10 +57,11 @@ namespace Seminar
         private Label label2;
         public WinnerForm winForm;
         private Button button1;
+        public int playerCount=1;
         public bool Game_Running = false;
         public int GameId;
         public bool local = false;
-       
+        public int maxPlayers;
         Form1 f;
         GameFour g;
         public Server()
@@ -146,7 +147,10 @@ namespace Seminar
                     Player p2 = player.Players.FirstOrDefault(r => r.Username ==clientUsername);
                     Game game = player.Games.Find(this.GameId);
                     game.WinnerId = p.Id;
-                   
+                    if (game.Player_Game.HasValue)
+                    {
+                        maxPlayers =game.Player_Game.Value;
+                    }
                     game.Status = "Closed";
      //ovo je nepotrebno jer vec postoji jos treba testirat               player.Games.Add(game);
                     p.Games.Add(game);
@@ -168,9 +172,21 @@ namespace Seminar
                     
 
                     OnFormUnsub("Form");
+                    using (PlayersEntities1 p = new PlayersEntities1())
+                    {
+                        Game game = new Game { Status="Open",Players_In_Game=playerCount,Player_Game=maxPlayers, Game_Type = gameType };
+                      
+                        p.Games.Add(game);
 
+                        Player player = p.Players.FirstOrDefault(r => r.Username == logedUser);
+                        player.Games.Add(game);
+                        p.SaveChanges();
+                        this.GameId = game.Id;
                     }
-                   else  if(dialog==DialogResult.No)
+
+                    MessageBox.Show(this.GameId.ToString());
+                }
+                else  if(dialog==DialogResult.No)
                 {
                     OnFormUnsub("Form");
                   
@@ -183,7 +199,7 @@ namespace Seminar
 
             }
 
-            else if (lost > 0)
+            else if (lost > 1)
             {
                 this.Game_Running = false;
 
@@ -193,6 +209,11 @@ namespace Seminar
                     Player p2 = player.Players.FirstOrDefault(r => r.Username == clientUsername);
                     Game game = player.Games.Find(this.GameId);
                     game.WinnerId = p2.Id;
+                    if (game.Player_Game.HasValue)
+                    {
+                        maxPlayers = game.Player_Game.Value;
+                    }
+
                     game.Status = "Closed";
                   //visak testirat  player.Games.Add(game);
                     p1.Games.Add(game);
@@ -210,7 +231,6 @@ namespace Seminar
                 {
                     this.win = 0;
                     this.lost = 0;
-                    Game game = new Game { Status = "Open", Players_In_Game = 2, Game_Type = gameType };
                     OnFormUnsub("Form");
 
                 }
@@ -236,9 +256,10 @@ namespace Seminar
 
                     OnFormUnsub("Form");
 
+
                 }
                 //need to add lost for server couse he left
-                if(dialog==DialogResult.No)
+                if (dialog==DialogResult.No)
                 {
                     OnFormUnsub("Form");
                     tcpServer.BroadcastLine("kicked");
@@ -274,7 +295,6 @@ namespace Seminar
             }
             else
             {
-                MessageBox.Show("on form unsun");
                 OnFormUnsub("f");
             }
         }
@@ -288,7 +308,7 @@ namespace Seminar
                     listView2.Items.RemoveAt(0);
 
                     usercnt--;
-
+                    playerCount--;
                     OnNumberDecrease(this, null);
                     tcpClient.Close();
                     tcpClient = null;
@@ -325,8 +345,9 @@ namespace Seminar
                 if(tcpClient==null)
             {
 
-
+                playerCount++;
                 tcpClient = e;
+                
             }
 
         }
@@ -567,8 +588,6 @@ namespace Seminar
                     }
                   
                     
-                    MessageBox.Show(this.Game_Running.ToString());
-                
 
             }
             else
@@ -664,7 +683,6 @@ namespace Seminar
         {
             if (tcpServer.IsStarted) 
             {
-                MessageBox.Show("jeli usa"+Game_Running.ToString());
                 //server  se gasi te se uklanja igra koja je stvorena prilikom pokretanja servera a nije se odigrala
                 using (PlayersEntities1 players = new PlayersEntities1())
                 {

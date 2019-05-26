@@ -75,7 +75,7 @@ namespace Seminar
             
 
         }
-        public int openPort()
+        public static int openPort()
         {
 
             int PortStartIndex = 1000;
@@ -97,7 +97,23 @@ namespace Seminar
             return unusedPort;
         }
 
-     
+        public string getIpv4()
+        {
+            foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                if (ni.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 || ni.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
+                {
+                    foreach (UnicastIPAddressInformation ip in ni.GetIPProperties().UnicastAddresses)
+                    {
+                        if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                        {
+                            return ip.Address.ToString();
+                        }
+                    }
+                }
+            }
+            return "";
+        }
         public String getIP()
         {
             string localIP;
@@ -112,7 +128,6 @@ namespace Seminar
         
         private void start_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(gameType.ToString());
             if(s==null)
             {
                 s = new Server();
@@ -128,7 +143,7 @@ namespace Seminar
             using (PlayersEntities1 p = new PlayersEntities1())
             {
                 Player play = p.Players.FirstOrDefault(r => r.Username==logedUser);
-                play.IpAddress = getIP();
+                play.IpAddress = getIpv4();
                 Game game = new Game {Status="Open",Players_In_Game=1,Game_Type=gameType,Player_Game=playerNumber};
                 play.Games.Add(game);
               
@@ -310,7 +325,6 @@ namespace Seminar
         private void TopPlayers_Click(object sender, EventArgs e)
         {
             int wins = 0;
-            decimal w_r = 0;
             using (PlayersEntities1 players = new PlayersEntities1())
             {
                 var player = players.Players.ToList();

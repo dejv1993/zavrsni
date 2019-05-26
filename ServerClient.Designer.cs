@@ -51,7 +51,7 @@
             this.start.BackColor = System.Drawing.Color.OldLace;
             this.start.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.start.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.start.Location = new System.Drawing.Point(349, 198);
+            this.start.Location = new System.Drawing.Point(349, 200);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(201, 27);
             this.start.TabIndex = 0;
@@ -128,7 +128,7 @@
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.logOutToolStripMenuItem.Text = "LogOut";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 

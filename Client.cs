@@ -60,7 +60,7 @@ namespace Seminar
             IPAddress.TryParse(Ip, out address);
             try
             {
-                client.Connect(Ip, 2000);
+                client.Connect(Ip, ServerClient.openPort());
               
                    client.WriteLine(logedUser);
 
