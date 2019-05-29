@@ -179,7 +179,7 @@ namespace Seminar
                     var playerGames = online.Games.Where(r => r.Status != "Closed");
 
                     string s = online.IpAddress;
-                    if (!s.Equals(""))
+                    if (s!="")
                     {
                         foreach (var g in playerGames)
                         {
