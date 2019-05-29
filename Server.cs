@@ -29,8 +29,8 @@ namespace Seminar
 
         public delegate void OnServerNewGame(string s);
         public event OnServerNewGame NewServerGame;
-        public SimpleTcpServer tcpServer;
-        public TcpClient tcpClient;
+        public static SimpleTcpServer tcpServer;
+        public  TcpClient tcpClient;
 
 
 
@@ -71,6 +71,7 @@ namespace Seminar
             tcpServer.Delimiter = 0x13;
             tcpServer.StringEncoder = Encoding.ASCII;
             tcpServer.DataReceived += Server_Recived;
+        
             //klijen ulazi u server 
             tcpServer.ClientConnected += Client_Connected;
             //klijent napusta server
@@ -116,14 +117,14 @@ namespace Seminar
             {
                 this.win++;
 
-                MessageBox.Show("you won with: " + f.p1.punti);
+                MessageBox.Show("you won with");
 
             }
             else if (s.Equals("c"))
             {
                 this.lost++;
 
-                MessageBox.Show("you lost with: " + f.p1.punti);
+                MessageBox.Show("you lost");
 
 
             }
@@ -174,6 +175,7 @@ namespace Seminar
                     OnFormUnsub("Form");
                     using (PlayersEntities1 p = new PlayersEntities1())
                     {
+                        playerCount+=tcpServer.ConnectedClientsCount;
                         Game game = new Game { Status="Open",Players_In_Game=playerCount,Player_Game=maxPlayers, Game_Type = gameType };
                       
                         p.Games.Add(game);
@@ -232,6 +234,18 @@ namespace Seminar
                     this.win = 0;
                     this.lost = 0;
                     OnFormUnsub("Form");
+                    using (PlayersEntities1 p = new PlayersEntities1())
+                    {
+                        playerCount += tcpServer.ConnectedClientsCount;
+                        Game game = new Game { Status = "Open", Players_In_Game = playerCount, Player_Game = maxPlayers, Game_Type = gameType };
+
+                        p.Games.Add(game);
+
+                        Player player = p.Players.FirstOrDefault(r => r.Username == logedUser);
+                        player.Games.Add(game);
+                        p.SaveChanges();
+                        this.GameId = game.Id;
+                    }
 
                 }
                 else if (dialog == DialogResult.No)
@@ -308,7 +322,6 @@ namespace Seminar
                     listView2.Items.RemoveAt(0);
 
                     usercnt--;
-                    playerCount--;
                     OnNumberDecrease(this, null);
                     tcpClient.Close();
                     tcpClient = null;
@@ -334,6 +347,10 @@ namespace Seminar
                     OnFormUnsub("Form");
 
                 }
+                else
+                {
+                    
+                }
                 MessageBox.Show(this.clientUsername + " left the server");
 
                 
@@ -345,7 +362,6 @@ namespace Seminar
                 if(tcpClient==null)
             {
 
-                playerCount++;
                 tcpClient = e;
                 
             }
@@ -389,19 +405,6 @@ namespace Seminar
                 
             }
          
-            /*/
-          if(e.MessageString.Substring(0,e.MessageString.Length-1).Equals("exiting"))
-            {
-               
-
-                    listView2.Items.RemoveAt(0);
-                usercnt--;
-
-                OnNumberDecrease(this,null);
-                
-            }
-            /*/
-            
             textBox1.Invoke((MethodInvoker)delegate ()
             {
                 
@@ -462,19 +465,20 @@ namespace Seminar
         }
 
 
-        public void Start(string Ip)
+        public void Start(string Ip,int port)
         {
             IPAddress.TryParse(Ip, out address);
             try
             {
 
-                tcpServer.Start(address, 2000);
+                tcpServer.Start(address, port);
 
 
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message.ToLower());
+                this.Dispose();
             }
 
         }
@@ -486,7 +490,7 @@ namespace Seminar
             {
 
                 tcpServer.Start(2000);
-
+                local = true;
 
             }
             catch (Exception e)
@@ -505,6 +509,7 @@ namespace Seminar
                 f.GameEnded -= this.OnGameEnded;
                 f.MouseClicked -= this.OnMOuseClicked;
                 f.FormUnsub -= this.OnFormUnsub;
+              
                 f.FormExiting -= this.OnFormClosing;
                 f.Close();
             }
@@ -558,7 +563,7 @@ namespace Seminar
 
                         this.MoveMade += f.OnMoveMade;
                         f.FormExiting += this.OnFormClosing;
-
+                    tcpServer.DataReceived += f.GameRecived;
                         f.FormUnsub -= this.OnFormUnsub;
 
 
@@ -579,12 +584,13 @@ namespace Seminar
                         f.MouseClicked += this.OnMOuseClicked;
                         //f.onmovemade rfferenca na metodu
                         f.GameEnded += this.OnGameEnded;
-
+                        
                         this.MoveMade += f.OnMoveMade;
                         f.FormUnsub += this.OnFormUnsub;
                         f.FormExiting += this.OnFormClosing;
+                    tcpServer.DataReceived += f.GameRecived;
 
-                        f.Show();
+                    f.Show();
                     }
                   
                     
@@ -597,7 +603,7 @@ namespace Seminar
 
 
 
-                //if (poruka != "")
+              
 
                 
 
@@ -626,8 +632,8 @@ namespace Seminar
                         g.ClientName = this.clientUsername;
 
                         g.GameEnded += this.OnGameEnded;
-
-                        this.MoveMade += g.OnMoveMade;
+                    tcpServer.DataReceived += g.GameRecived;
+                    this.MoveMade += g.OnMoveMade;
                         g.FormExiting += this.OnFormClosing;
 
                         g.FormUnsub -= this.OnFormUnsub;
@@ -650,8 +656,8 @@ namespace Seminar
                         g.MouseClicked += this.OnMOuseClicked;
                         //f.onmovemade rfferenca na metodu
                         g.GameEnded += this.OnGameEnded;
-
-                        this.MoveMade += g.OnMoveMade;
+                    tcpServer.DataReceived += g.GameRecived;
+                    this.MoveMade += g.OnMoveMade;
                         g.FormUnsub += this.OnFormUnsub;
                         g.FormExiting += this.OnFormClosing;
 
@@ -775,9 +781,11 @@ namespace Seminar
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(611, 52);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // StartGame
             // 
+            this.StartGame.Enabled = false;
             this.StartGame.Location = new System.Drawing.Point(255, 70);
             this.StartGame.Name = "StartGame";
             this.StartGame.Size = new System.Drawing.Size(121, 23);
@@ -785,7 +793,6 @@ namespace Seminar
             this.StartGame.Text = "StartGame";
             this.StartGame.UseVisualStyleBackColor = true;
             this.StartGame.Click += new System.EventHandler(this.StartGame_Click);
-            this.StartGame.Enabled = false;
             // 
             // label1
             // 
@@ -854,6 +861,11 @@ namespace Seminar
         }
 
         private void Server_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -26,8 +26,8 @@ namespace Seminar
         public int k2 = 0;
         public static int k_poz = 0;
         public static int max = 39;
-        public string potez1="";
-        public string potez2="";
+        public string potez1 = "";
+        public string potez2 = "";
         private int timer_tick = 0;
         public String logedUser;
         public String ClientName;
@@ -61,7 +61,7 @@ namespace Seminar
             d.shuffle();
             p1 = new Igrac("player1");
             p1.turn = true;
-          
+
             p2 = new Igrac("player");
             p2.turn = false;
             c1 = new Cards();
@@ -90,7 +90,7 @@ namespace Seminar
         public event FormExitingEventHandler FormExiting;
         public void OnFormExiting()
         {
-            if(FormExiting!=null)
+            if (FormExiting != null)
             {
                 FormExiting();
             }
@@ -102,17 +102,17 @@ namespace Seminar
         public event GameOverEventHandler GameEnded;
         public void OnGameEnded(string s)
         {
-            if(GameEnded!=null)
+            if (GameEnded != null)
             {
                 GameEnded(s);
-               
+
             }
         }
         public delegate void UnsubEventHandler(string s);
         public event UnsubEventHandler FormUnsub;
-        public void  OnFormUnsub(string s)
+        public void OnFormUnsub(string s)
         {
-            if(FormUnsub!=null)
+            if (FormUnsub != null)
             {
                 FormUnsub(s);
             }
@@ -137,11 +137,11 @@ namespace Seminar
         {
             if (s.Equals("pictureBox1"))
             {
-                
+
 
                 pictureBox5_Click(this, EventArgs.Empty);
 
-               MessageBox.Show("card thrown");
+                MessageBox.Show("card thrown");
 
 
             }
@@ -197,7 +197,7 @@ namespace Seminar
             //Postavlja slike za prvog igraca
             for (int p = 0; p < 1; p++)
             {
-                
+
                 string slika = p1.ruka[i].ToString();
                 pictureBox1.Tag = p1.getRuka(i);
 
@@ -244,7 +244,7 @@ namespace Seminar
 
             c3 = (Cards)pictureBox12.Tag;
             panel1.Controls.Add(pictureBox1);
-            
+
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox3);
             panel2.Controls.Add(pictureBox5);
@@ -271,7 +271,7 @@ namespace Seminar
 
             int broj;
             int broj1;
-           
+
 
             string prvi = c1.vr.ToString();
             string drugi = c2.vr.ToString();
@@ -290,7 +290,7 @@ namespace Seminar
                     label4.Visible = false;
                     p1.punti += Punti(broj, broj1);
                     label7.Text = p1.punti.ToString();
-                 
+
 
                 }
                 else
@@ -374,7 +374,7 @@ namespace Seminar
                     }
 
                 }
-                
+
 
             }
 
@@ -391,7 +391,7 @@ namespace Seminar
 
                         i++;
                         label3.Text = (max - i).ToString();
-                       
+
                         p2.ruka[0] = d.getKarte(i);
 
                         pictureBox5.Image = Properties.Resources.pozadina;
@@ -405,8 +405,8 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-              
-                  
+
+
                 }
                 else
                 {
@@ -419,22 +419,22 @@ namespace Seminar
 
                         i++;
                         label3.Text = (max - i).ToString();
-                        
+
                         p1.ruka[0] = d.getKarte(i);
                         string slika = p1.ruka[0].ToString();
                         pictureBox1.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
 
                         i++;
-                        
+
                         label3.Text = (max - i).ToString();
-                        if(i>=max)
+                        if (i >= max)
                         {
                             pictureBox12.Dispose();
                             label3.Text = 0.ToString();
                         }
                     }
-                
-                  
+
+
 
                 }
 
@@ -468,8 +468,8 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-                    
-                 
+
+
 
                 }
                 else
@@ -491,14 +491,14 @@ namespace Seminar
                         i++;
                         label3.Text = (max - i).ToString();
                     }
-                   
+
                 }
             }
             else if (potez1.Equals("pictureBox1") && potez2.Equals("pictureBox7"))
             {
-               
-                    if (p1.turn == true)
-                    {
+
+                if (p1.turn == true)
+                {
                     if (i < max)
                     {
                         p1.ruka[0] = d.getKarte(i);
@@ -522,11 +522,11 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-                   
-                    
+
+
 
                 }
-                
+
                 else
                 {
                     if (i < max)
@@ -552,7 +552,7 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-                
+
                 }
             }
 
@@ -583,7 +583,7 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-               
+
 
                 }
                 else
@@ -610,7 +610,7 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-                 
+
                 }
             }
             else if (potez1.Equals("pictureBox2") && potez2.Equals("pictureBox6"))
@@ -640,7 +640,7 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-                   
+
                 }
 
                 else
@@ -667,7 +667,7 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-                 
+
                 }
             }
             else if (potez1.Equals("pictureBox2") && potez2.Equals("pictureBox7"))
@@ -698,7 +698,7 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-                   
+
                 }
                 else
                 {
@@ -724,13 +724,13 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-                   
+
 
                 }
 
 
             }
-         
+
             if (potez1.Equals("pictureBox3") && potez2.Equals("pictureBox5"))
             {
                 if (p1.turn == true)
@@ -760,7 +760,7 @@ namespace Seminar
 
 
                     }
-                  
+
 
                 }
                 else
@@ -787,7 +787,7 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-                
+
                 }
             }
             else if (potez1.Equals("pictureBox3") && potez2.Equals("pictureBox6"))
@@ -817,7 +817,7 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-                  
+
                 }
                 else
                 {
@@ -843,8 +843,8 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-                  
-                  
+
+
                 }
             }
             else if (potez1.Equals("pictureBox3") && potez2.Equals("pictureBox7"))
@@ -874,7 +874,7 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-             
+
 
                 }
                 else
@@ -901,7 +901,7 @@ namespace Seminar
                             label3.Text = 0.ToString();
                         }
                     }
-                 
+
 
                 }
             }
@@ -910,11 +910,11 @@ namespace Seminar
             if (p1.punti > 5)
             {
 
-               
-                
+
+
 
                 OnGameEnded("e");
-  
+
             }
             else if (p2.punti > 2)
             {
@@ -928,11 +928,11 @@ namespace Seminar
 
             }
             timer1_Tick(null, null);
-        
+
 
 
         }
-   
+
         public int Punti(int vr, int vr1)
         {
             int punti = 0;
@@ -990,7 +990,7 @@ namespace Seminar
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+
             p1.turn = false;
             p2.turn = true;
             label4.Visible = true;
@@ -1008,7 +1008,7 @@ namespace Seminar
                 c1 = (Cards)pictureBox10.Tag;
                 pictureBox1.Tag = null;
                 pictureBox1.Image = null;
-               
+
             }
             else if (i == max)
             {
@@ -1026,7 +1026,7 @@ namespace Seminar
             //kada dode za podilit kartu za igru(zadnju) 
             else
             {
-               
+
                 pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
                 pictureBox10.Tag = (Cards)p1.ruka[0];
                 c1 = (Cards)pictureBox10.Tag;
@@ -1062,7 +1062,7 @@ namespace Seminar
             string slika = p1.ruka[1].ToString();
             if (i < max)
             {
-              
+
                 pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
                 pictureBox10.Tag = (Cards)p1.ruka[1];
                 c1 = (Cards)pictureBox10.Tag;
@@ -1077,14 +1077,14 @@ namespace Seminar
                 c1 = (Cards)pictureBox10.Tag;
                 pictureBox2.Tag = null;
                 pictureBox2.Image = null;
-               
+
 
 
 
             }
             else
             {
-              
+
                 pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
                 pictureBox10.Tag = (Cards)p1.ruka[1];
                 c1 = (Cards)pictureBox10.Tag;
@@ -1131,13 +1131,13 @@ namespace Seminar
             }
             else if (i == max)
             {
-               
+
                 pictureBox10.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
                 pictureBox10.Tag = (Cards)p1.ruka[2];
                 c1 = (Cards)pictureBox10.Tag;
                 pictureBox3.Tag = null;
                 pictureBox3.Image = null;
-            
+
 
 
 
@@ -1178,7 +1178,7 @@ namespace Seminar
             label4.Visible = false;
             if (i < max)
             {
-              
+
 
                 pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
                 pictureBox11.Tag = (Cards)p2.ruka[2];
@@ -1189,7 +1189,7 @@ namespace Seminar
             }
             else if (i == max)
             {
-                
+
                 pictureBox11.Image = (Image)Properties.Resources.ResourceManager.GetObject(slika);
                 pictureBox11.Tag = (Cards)p2.ruka[2];
                 c2 = (Cards)pictureBox11.Tag;
@@ -1206,7 +1206,7 @@ namespace Seminar
                 pictureBox7.Image = null;
 
             }
-            if (card_trown==2)
+            if (card_trown == 2)
             {
                 card_trown = 0;
                 pokupi();
@@ -1388,5 +1388,22 @@ namespace Seminar
         {
 
         }
-    }
+
+
+        public void GameRecived(object sender, SimpleTCP.Message e)
+        {
+            if (e.MessageString.Contains(ClientName + ":"))
+                listView2.Items.Add(e.MessageString);
+        }
+        //send fromtekstbox
+        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+     
+        
+    }  
 }

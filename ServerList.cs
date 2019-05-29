@@ -127,7 +127,7 @@ namespace Seminar
                     client.FormClosing += this.clientClosing;
 
                     this.Hide();
-                    client.Join(listView2.Items[poz].Tag.ToString());
+                    client.Join(listView2.Items[poz].Tag.ToString(),client.port);
                     if(int.TryParse(listView2.Items[poz].SubItems[3].Text,out int numb))
                         {
                         client.gameType = numb;
@@ -146,7 +146,7 @@ namespace Seminar
 
                     client.Show();
 
-                    client.Join(listView2.Items[poz].Tag.ToString());
+                    client.Join(listView2.Items[poz].Tag.ToString(),client.port);
                     if (int.TryParse(listView2.Items[poz].SubItems[3].Text, out int numb))
                     {
                         client.gameType = numb;

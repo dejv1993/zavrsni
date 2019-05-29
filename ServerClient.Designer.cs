@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServerClient));
             this.start = new System.Windows.Forms.Button();
             this.join = new System.Windows.Forms.Button();
-            this.LocalHost = new System.Windows.Forms.Button();
-            this.Join_Local = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +38,6 @@
             this.TopPlayers = new System.Windows.Forms.ToolStripTextBox();
             this.HomePage = new System.Windows.Forms.ToolStripTextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,39 +61,13 @@
             this.join.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.join.BackColor = System.Drawing.Color.OldLace;
             this.join.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.join.Location = new System.Drawing.Point(349, 333);
+            this.join.Location = new System.Drawing.Point(349, 309);
             this.join.Name = "join";
             this.join.Size = new System.Drawing.Size(201, 23);
             this.join.TabIndex = 1;
             this.join.Text = "Server_List";
             this.join.UseVisualStyleBackColor = false;
             this.join.Click += new System.EventHandler(this.join_Click);
-            // 
-            // LocalHost
-            // 
-            this.LocalHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.LocalHost.BackColor = System.Drawing.Color.OldLace;
-            this.LocalHost.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.LocalHost.Location = new System.Drawing.Point(349, 244);
-            this.LocalHost.Name = "LocalHost";
-            this.LocalHost.Size = new System.Drawing.Size(201, 23);
-            this.LocalHost.TabIndex = 2;
-            this.LocalHost.Text = "Local_host";
-            this.LocalHost.UseVisualStyleBackColor = false;
-            this.LocalHost.Click += new System.EventHandler(this.LocalHost_Click);
-            // 
-            // Join_Local
-            // 
-            this.Join_Local.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Join_Local.BackColor = System.Drawing.Color.OldLace;
-            this.Join_Local.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Join_Local.Location = new System.Drawing.Point(349, 381);
-            this.Join_Local.Name = "Join_Local";
-            this.Join_Local.Size = new System.Drawing.Size(201, 23);
-            this.Join_Local.TabIndex = 3;
-            this.Join_Local.Text = "Join_Local";
-            this.Join_Local.UseVisualStyleBackColor = false;
-            this.Join_Local.Click += new System.EventHandler(this.Join_Local_Click);
             // 
             // toolStrip1
             // 
@@ -162,28 +133,21 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(205, 98);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(349, 354);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(201, 23);
             this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "RESET_DB";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(349, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackColor = System.Drawing.Color.OldLace;
-            this.button3.Location = new System.Drawing.Point(349, 290);
+            this.button3.Location = new System.Drawing.Point(349, 256);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(201, 23);
             this.button3.TabIndex = 7;
@@ -200,11 +164,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(896, 431);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.Join_Local);
-            this.Controls.Add(this.LocalHost);
             this.Controls.Add(this.join);
             this.Controls.Add(this.start);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -224,8 +185,6 @@
 
         private System.Windows.Forms.Button start;
         private System.Windows.Forms.Button join;
-        private System.Windows.Forms.Button LocalHost;
-        private System.Windows.Forms.Button Join_Local;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
@@ -233,7 +192,6 @@
         private System.Windows.Forms.ToolStripTextBox TopPlayers;
         private System.Windows.Forms.ToolStripTextBox HomePage;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
     }
 }

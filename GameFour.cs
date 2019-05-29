@@ -2669,6 +2669,11 @@ namespace Seminar
 
         }
 
+        public void GameRecived(object sender, SimpleTCP.Message e)
+        {
+            if (e.MessageString.Contains(ClientName + ":"))
+                listView2.Items.Add(e.MessageString);
+        }
         private void GameFour_FormClosing(object sender, FormClosingEventArgs e)
         {
             OnFormExiting();
@@ -2710,9 +2715,9 @@ namespace Seminar
             MessageBox.Show(pictureBox10.Tag.ToString());
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            timer1_Tick(null, EventArgs.Empty);
+
         }
     }
 }

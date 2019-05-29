@@ -22,7 +22,7 @@ namespace Seminar
         public event ClientMoveEventHandler ClientMove;
        
         public IPAddress address;
-        public  SimpleTcpClient client;
+        public SimpleTcpClient client;
         public int port;
         public const string left = "kicked";
         public String logedUser;
@@ -33,8 +33,9 @@ namespace Seminar
         public int gameType;
         public WinnerForm winForm;
         public int clientWin = 0;
+        
          public int serverWin = 0;
-        public TcpClient tcpClient;
+        public static TcpClient tcpClient;
         Form1 f;
         GameFour g;
         private bool gameRunning = false;
@@ -50,17 +51,14 @@ namespace Seminar
 
         }
      
-
-  
-
      
-        public void Join(String Ip)
+        public void Join(String Ip,int port)
         {
 
             IPAddress.TryParse(Ip, out address);
             try
             {
-                client.Connect(Ip, ServerClient.openPort());
+                client.Connect(Ip,7000);
               
                    client.WriteLine(logedUser);
 
@@ -284,7 +282,7 @@ namespace Seminar
                     else
                     {
 
-                        MessageBox.Show("client won");
+                        MessageBox.Show("opponent won");
                         DialogResult dialog = MessageBox.Show("Continue", "exit", MessageBoxButtons.YesNo);
                         if (dialog == DialogResult.Yes)
                         {
@@ -436,6 +434,7 @@ namespace Seminar
                                 f.Text = "client";
                                 f.MouseClicked += this.OnMOuseClicked;
                                 this.ClientMove += f.OnClientMove;
+                                client.DataReceived += f.GameRecived;
                                 this.gameRunning = true;
                                 f.FormClosing += this.Game_Form_Closing;
 
@@ -453,6 +452,8 @@ namespace Seminar
                                 g.MouseClicked += this.OnMOuseClicked;
                                 this.ClientMove += g.OnClientMove;
                                 this.gameRunning = true;
+                                client.DataReceived += g.GameRecived;
+
                                 g.FormClosing += this.Game_Form_Closing;
 
                                 g.Show();

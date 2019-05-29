@@ -39,7 +39,28 @@ namespace Seminar
       
          
             c = new Client();
+            c.port = openPort();
+        }
+        public  int openPort()
+        {
 
+            int PortStartIndex = 1000;
+            int PortEndIndex = 2000;
+            IPGlobalProperties properties = IPGlobalProperties.GetIPGlobalProperties();
+            IPEndPoint[] tcpEndPoints = properties.GetActiveTcpListeners();
+
+            List<int> usedPorts = tcpEndPoints.Select(p => p.Port).ToList<int>();
+            int unusedPort = 0;
+
+            for (int port = PortStartIndex; port < PortEndIndex; port++)
+            {
+                if (!usedPorts.Contains(port))
+                {
+                    unusedPort = port;
+                    break;
+                }
+            }
+            return unusedPort;
         }
         public void OnNumberIncrease(object sender,EventArgs e)
         {
@@ -62,6 +83,7 @@ namespace Seminar
             {
                 if (s.Game_Running.Equals(false))
                 {
+                    this.GameId = s.GameId;
                     Game g = players.Games.FirstOrDefault(r => r.Id == this.GameId);
                     if (g.Status.Equals("Open"))
                     {
@@ -75,27 +97,7 @@ namespace Seminar
             
 
         }
-        public static int openPort()
-        {
-
-            int PortStartIndex = 1000;
-            int PortEndIndex = 2000;
-            IPGlobalProperties properties = IPGlobalProperties.GetIPGlobalProperties();
-            IPEndPoint[] tcpEndPoints = properties.GetActiveTcpListeners();
-
-            List<int> usedPorts = tcpEndPoints.Select(p => p.Port).ToList<int>();
-            int unusedPort = 0;
-
-            for (int port = PortStartIndex; port < PortEndIndex; port++)
-            {
-                if (!usedPorts.Contains(port))
-                {
-                    unusedPort = port;
-                    break;
-                }
-            }
-            return unusedPort;
-        }
+       
 
         public string getIpv4()
         {
@@ -143,7 +145,7 @@ namespace Seminar
             using (PlayersEntities1 p = new PlayersEntities1())
             {
                 Player play = p.Players.FirstOrDefault(r => r.Username==logedUser);
-                play.IpAddress = getIpv4();
+                play.IpAddress=getIP();
                 Game game = new Game {Status="Open",Players_In_Game=1,Game_Type=gameType,Player_Game=playerNumber};
                 play.Games.Add(game);
               
@@ -159,7 +161,7 @@ namespace Seminar
 
                     }
                 }
-                s.Start(play.IpAddress);
+                s.Start(play.IpAddress,7000);
                 s.logedUser = play.Username;
                 this.Hide();
                 s.FormClosing += this.formClosed;
@@ -246,43 +248,64 @@ namespace Seminar
 
         private void ServerClient_Load(object sender, EventArgs e)
         {
+            using (PlayersEntities1 players = new PlayersEntities1())
+            {
+                Player p = players.Players.FirstOrDefault(r => r.Username == logedUser);
+                    
+                    var role = p.PlayerRoles.FirstOrDefault(r1 =>r1.PlayerId==p.Id);
+                if (role.Role.Id == 1)
+                {
+                    button1.Visible = true;
 
+                }
+                else
+                {
+                    button1.Visible = false;
+                }
+               
+            }
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (PlayersEntities1 players = new PlayersEntities1())
+            DialogResult dialog = MessageBox.Show("ResetDB", "Exit", MessageBoxButtons.OKCancel);
+
+            if (dialog==DialogResult.OK)
             {
-                
-                var games = players.Games.ToList();
-                var pl = players.Players.ToList();
-
-                for(int i=0;i<games.Count;i++)
+                using (PlayersEntities1 players = new PlayersEntities1())
                 {
-                    if(games[i].Id>=4)
+
+                    var games = players.Games.ToList();
+                    var pl = players.Players.ToList();
+
+                    for (int i = 0; i < games.Count; i++)
                     {
-                        for(int j=0;j<pl.Count;j++)
+                        if (games[i].Id >= 4)
                         {
-                            for(int k=0; k<pl[j].Games.Count;k++)
+                            for (int j = 0; j < pl.Count; j++)
                             {
-                                pl[j].Games.Remove(games[i]);
+                                for (int k = 0; k < pl[j].Games.Count; k++)
+                                {
+                                    pl[j].Games.Remove(games[i]);
+                                }
                             }
-                        }
-                        players.SaveChanges();
+                            players.SaveChanges();
 
+                        }
                     }
-                }
-                for(int j=0;j<games.Count;j++)
-                {
-                    if (games[j].Id > 4)
+                    for (int j = 0; j < games.Count; j++)
                     {
-                        players.Games.Remove(games[j]);
+                        if (games[j].Id > 4)
+                        {
+                            players.Games.Remove(games[j]);
+                        }
                     }
+
+                    players.SaveChanges();
                 }
-               
-                players.SaveChanges();
             }
+         
 
         }
 
