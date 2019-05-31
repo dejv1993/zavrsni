@@ -39,6 +39,8 @@
             this.HomePage = new System.Windows.Forms.ToolStripTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +50,7 @@
             this.start.BackColor = System.Drawing.Color.OldLace;
             this.start.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.start.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.start.Location = new System.Drawing.Point(349, 200);
+            this.start.Location = new System.Drawing.Point(349, 186);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(201, 27);
             this.start.TabIndex = 0;
@@ -61,7 +63,7 @@
             this.join.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.join.BackColor = System.Drawing.Color.OldLace;
             this.join.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.join.Location = new System.Drawing.Point(349, 309);
+            this.join.Location = new System.Drawing.Point(349, 276);
             this.join.Name = "join";
             this.join.Size = new System.Drawing.Size(201, 23);
             this.join.TabIndex = 1;
@@ -147,13 +149,37 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackColor = System.Drawing.Color.OldLace;
-            this.button3.Location = new System.Drawing.Point(349, 256);
+            this.button3.Location = new System.Drawing.Point(349, 235);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(201, 23);
             this.button3.TabIndex = 7;
             this.button3.Text = "Server Options";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.Location = new System.Drawing.Point(349, 396);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(201, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "PLAYER_LIST";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.OldLace;
+            this.button4.Location = new System.Drawing.Point(349, 316);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(201, 26);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "About_Game";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // ServerClient
             // 
@@ -163,6 +189,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(896, 431);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.toolStrip1);
@@ -193,5 +221,7 @@
         private System.Windows.Forms.ToolStripTextBox HomePage;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
     }
 }

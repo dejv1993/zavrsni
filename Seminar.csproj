@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutGame.Designer.cs">
+      <DependentUpon>AboutGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cards.cs" />
     <Compile Include="Client.cs">
       <SubType>Form</SubType>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="Player.cs">
       <DependentUpon>PlayModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerList.Designer.cs">
+      <DependentUpon>PlayerList.cs</DependentUpon>
     </Compile>
     <Compile Include="PlayerRole.cs">
       <DependentUpon>PlayModel.tt</DependentUpon>
@@ -159,6 +171,9 @@
     <Compile Include="WinnerForm.Designer.cs">
       <DependentUpon>WinnerForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutGame.resx">
+      <DependentUpon>AboutGame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerList.resx">
+      <DependentUpon>PlayerList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

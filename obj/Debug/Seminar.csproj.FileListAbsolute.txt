@@ -85,3 +85,5 @@ C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromj
 C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.pdb
 C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.csprojResolveAssemblyReference.cache
 C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.GameFour.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.PlayerList.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.AboutGame.resources

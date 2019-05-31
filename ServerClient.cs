@@ -23,10 +23,12 @@ namespace Seminar
         GameType gameOption;
         public  static int playerNumber=2;
         public static int gameType=3;
+        public PlayerList playerList;
 
         public string ServerIP;
         public Server s;
         public Client c;
+        AboutGame Game_Rules;
         public String logedUser;
         ServerList serverLista;
         private int GameId;
@@ -256,11 +258,12 @@ namespace Seminar
                 if (role.Role.Id == 1)
                 {
                     button1.Visible = true;
-
+                    button2.Visible = true;
                 }
                 else
                 {
                     button1.Visible = false;
+                    button2.Visible = false;
                 }
                
             }
@@ -464,6 +467,44 @@ namespace Seminar
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (playerList == null)
+            {
+                playerList = new PlayerList();
+                playerList.Show();
+
+            }
+           else  if(playerList.IsDisposed)
+            {
+                playerList = new PlayerList();
+                Show();
+            }
+            else
+            {
+                playerList.Show();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(this.Game_Rules== null)
+            {
+
+                Game_Rules = new AboutGame();
+                Game_Rules.Show();
+            }
+            else if(Game_Rules.IsDisposed)
+            {
+                Game_Rules = new AboutGame();
+                Game_Rules.Show();
+            }
+            else
+            {
+                Game_Rules.Show();
+            }
         }
     }
 }
