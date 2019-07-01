@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Seminar
 {
-    public partial class Login : Form
+    public partial class Login : MetroForm
     {
         public Login()
         {
@@ -86,6 +87,69 @@ namespace Seminar
             catch (System.Exception other)
             {
                 MessageBox.Show(other.Message);
+            }
+        }
+
+        private void metroLink1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("https://support.microsoft.com/en-us/help/305703/how-to-start-the-default-internet-browser-programmatically-by-using-vi");
+            }
+            catch
+        (
+         System.ComponentModel.Win32Exception noBrowser)
+            {
+                if (noBrowser.ErrorCode == -2147467259)
+                    MessageBox.Show(noBrowser.Message);
+            }
+            catch (System.Exception other)
+            {
+                MessageBox.Show(other.Message);
+            }
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+
+            using (PlayersEntities1 player = new PlayersEntities1())
+            {
+                Player p = player.Players.FirstOrDefault(r => r.Username == textBox1.Text);
+                if (p != null)
+                {
+
+                    if (p.Password.Equals(textBox2.Text))
+                    {
+                        if (!p.Status.Equals("Online"))
+                        {
+                            ServerClient s = new ServerClient();
+
+                            p.Status = "Online";
+                            player.SaveChanges();
+
+                            s.logedUser = p.Username;
+
+                            s.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("You are already logged in");
+                            textBox1.Text = "";
+                            textBox2.Text = "";
+                        }
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("wrong password");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("User dont exist");
+                }
+
             }
         }
     }

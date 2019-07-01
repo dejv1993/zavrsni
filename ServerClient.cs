@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
+using MetroFramework.Forms;
 using System.Net.NetworkInformation;
 using System.IO;
 using System.Net;
@@ -17,27 +18,29 @@ namespace Seminar
 {
   
     public partial class ServerClient : Form
+
+
     {
 
         public delegate void ClientAddedHandler(string s);
         GameType gameOption;
         public  static int playerNumber=2;
         public static int gameType=3;
-        public PlayerList playerList;
+       
 
         public string ServerIP;
+        public String logedUser;
         public Server s;
         public Client c;
         AboutGame Game_Rules;
-        public String logedUser;
-        ServerList serverLista;
+        public PlayerList playerList;
+        public ServerList serverLista;
         private int GameId;
         public ServerClient()
         {
             InitializeComponent();
        
            
-            serverLista = new ServerList();
       
          
             c = new Client();
@@ -190,9 +193,11 @@ namespace Seminar
 
         private void join_Click(object sender, EventArgs e)
         {
-            //prosljecuje serverIp adresu join metodi u client
-            //c.Join(ServerIP);
-            if(serverLista.IsDisposed)
+          if (serverLista==null)
+            {
+                serverLista = new ServerList();
+            }
+          else if (serverLista.IsDisposed)
             {
                 serverLista = new ServerList();
             }
@@ -200,9 +205,6 @@ namespace Seminar
             serverLista.FormClosing += this.formClosed;
             serverLista.Show();
             this.Hide();
-            
-           
-
         }
 
         private void ServerClient_FormClosing(object sender, FormClosingEventArgs e)
@@ -351,12 +353,14 @@ namespace Seminar
         private void TopPlayers_Click(object sender, EventArgs e)
         {
             int wins = 0;
+            int pl_count;
             using (PlayersEntities1 players = new PlayersEntities1())
             {
                 var player = players.Players.ToList();
-
+                pl_count = player.Count;
                 foreach (var pl in player)
                 {
+
                     var games = pl.Games.ToList();
                     foreach (var g in games)
                     {
@@ -389,17 +393,40 @@ namespace Seminar
                 }
                 players.SaveChanges();
 
-                var p = players.Players.OrderByDescending(r => r.Win_Rate).OrderByDescending(r => r.Games.Count).Take(3).ToList();
-                StringBuilder builder = new StringBuilder();
-
-
-                foreach(var str in p)
+                if (pl_count >= 3)
                 {
-                    builder.Append("User:"+str.Username+"  "+"Win rate:"+str.Win_Rate.ToString()+"%"+" Total Games:"+str.Games.Count.ToString()).AppendLine();
+                    var p = players.Players.OrderByDescending(r => r.Win_Rate).ThenByDescending(r => r.Games.Count).Take(3).ToList();
+                    StringBuilder builder = new StringBuilder();
+
+
+                    foreach (var str in p)
+                    {
+                        builder.Append("User:" + str.Username + "  " + "Win rate:" + str.Win_Rate.ToString() + "%" + " Total Games:" + str.Games.Count.ToString()).AppendLine();
+                    }
+
+
+                    //MessageBox.Show(builder.ToString());
+                    MetroFramework.MetroMessageBox.Show(this,builder.ToString(),"Top players");
+
                 }
+                else
+                {
+                    var p = players.Players.OrderByDescending(r => r.Win_Rate).ThenByDescending(r => r.Games.Count).Take(pl_count).ToList();
 
 
-                MessageBox.Show(builder.ToString());
+                    StringBuilder builder = new StringBuilder();
+
+
+                    foreach (var str in p)
+                    {
+                        builder.Append("User:" + str.Username + "  " + "Win rate:" + str.Win_Rate.ToString() + "%" + " Total Games:" + str.Games.Count.ToString()).AppendLine();
+                    }
+
+
+                   // MessageBox.Show(builder.ToString());
+                    MetroFramework.MetroMessageBox.Show(this, builder.ToString());
+
+                }
             }
         }
 
@@ -505,6 +532,11 @@ namespace Seminar
             {
                 Game_Rules.Show();
             }
+        }
+
+        private void metroToolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }

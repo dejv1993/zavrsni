@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Seminar
 {
-    public partial class PlayerList : Form
+    public partial class PlayerList : MetroForm
     {
         public int player_id=-1;
         public PlayerList()
@@ -32,6 +33,7 @@ namespace Seminar
                         item1.Tag = p.Id;
                         item1.Text = p.Id.ToString();
                         item1.SubItems.Add(p.Username);
+                        item1.SubItems.Add(p.Email);
                         listView1.Items.Add(item1);
                     }
                 }
@@ -126,6 +128,11 @@ namespace Seminar
             int selected = listView1.SelectedIndices[0];
             // player_id= listView1.SelectedItems[selected].Text
             MessageBox.Show(listView1.Items[selected].Text);
+        }
+
+        private void PlayerList_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

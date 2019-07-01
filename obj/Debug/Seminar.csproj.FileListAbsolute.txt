@@ -69,7 +69,6 @@ C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromj
 C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\EntityFramework.xml
 C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\Newtonsoft.Json.xml
-C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.Client.resources
 C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.Form1.resources
 C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.Login.resources
 C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.Properties.Resources.resources
@@ -87,3 +86,7 @@ C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromj
 C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.GameFour.resources
 C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.PlayerList.resources
 C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.AboutGame.resources
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\MetroFramework.Design.dll
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\MetroFramework.dll
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\icoric\source\repos\Seminar\Seminargotov fali server\seminarzadnjapromjena\Zadnjepromjenessem\SemPC3\Seminar\obj\Debug\Seminar.Client.resources

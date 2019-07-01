@@ -13,6 +13,7 @@ using System.IO;
 using System.Threading;
 using System.Net;
 using System.Net.Sockets;
+using MetroFramework.Forms;
 
 namespace Seminar
 {
@@ -58,6 +59,8 @@ namespace Seminar
             IPAddress.TryParse(Ip, out address);
             try
             {
+
+
                 client.Connect(Ip,7000);
               
                    client.WriteLine(logedUser);
@@ -394,15 +397,11 @@ namespace Seminar
 
                 if (start.Length > 800)
                 {
+                //bez ovoga ne uspije ucitat cili string 
 
-
-                    BeginInvoke((MethodInvoker)delegate
+                BeginInvoke((MethodInvoker)delegate
                         {
-
-
-
                             string s = start.Substring(0, start.Length - 1);
-                        //bez ovoga ne uspije ucitat cili string 
                         try
                             {
                                 if (gameType == 3)
@@ -412,12 +411,10 @@ namespace Seminar
                                 else
                                 {
                                     g = JsonConvert.DeserializeObject<GameFour>(s);
-
                                 }
-
                                 Thread.Sleep(1);
                             }
-
+                        
                             catch (Exception e)
                             {
                                 MessageBox.Show(e.Message.ToString());
@@ -578,6 +575,11 @@ namespace Seminar
         }
 
         private void Client_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

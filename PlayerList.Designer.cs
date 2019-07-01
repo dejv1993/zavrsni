@@ -32,16 +32,18 @@
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Username = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
+            this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
-            this.Username});
+            this.Username,
+            this.Email});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Location = new System.Drawing.Point(0, 24);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(802, 350);
             this.listView1.TabIndex = 0;
@@ -57,10 +59,11 @@
             // Username
             // 
             this.Username.Text = "Username";
+            this.Username.Width = 262;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 358);
+            this.button1.Location = new System.Drawing.Point(0, 380);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(172, 48);
             this.button1.TabIndex = 1;
@@ -68,15 +71,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // Email
+            // 
+            this.Email.Text = "Email";
+            this.Email.Width = 515;
+            // 
             // PlayerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Seminar.Properties.Resources.back;
+            this.BackImage = global::Seminar.Properties.Resources.back;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
             this.Name = "PlayerList";
             this.Text = "PlayerList";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlayerList_FormClosing);
             this.Load += new System.EventHandler(this.PlayerList_Load);
             this.ResumeLayout(false);
 
@@ -88,5 +99,6 @@
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader Username;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ColumnHeader Email;
     }
 }

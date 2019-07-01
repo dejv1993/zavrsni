@@ -15,6 +15,8 @@ using System.Net.Sockets;
 using System.Threading;
 using Newtonsoft.Json;
 using SimpleTCP;
+using MetroFramework.Forms;
+
 namespace Seminar
 {
     public partial class Server : Form
@@ -267,10 +269,7 @@ namespace Seminar
               
                 if (dialog == DialogResult.Yes)
                 {
-
                     OnFormUnsub("Form");
-
-
                 }
                 //need to add lost for server couse he left
                 if (dialog==DialogResult.No)
@@ -550,8 +549,6 @@ namespace Seminar
                         f.ClientName = clientUsername;
                         f.logedUser = logedUser;
                         json = JsonConvert.SerializeObject(f);
-
-
                         tcpServer.BroadcastLine(json);
                         //server subscribe
                         f.MouseClicked += this.OnMOuseClicked;
@@ -827,7 +824,7 @@ namespace Seminar
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
+            this.button1.Text = "Kick_player";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -843,6 +840,7 @@ namespace Seminar
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.Send);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Server";
             this.Text = "SERVER";

@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Runtime.Serialization;
+using MetroFramework.Forms;
 
 namespace Seminar
 {
@@ -31,7 +32,6 @@ namespace Seminar
         private int timer_tick = 0;
         public String logedUser;
         public String ClientName;
-        public JsonSerializer serializer;
         [JsonProperty]
         public Deck d;
 
@@ -81,8 +81,6 @@ namespace Seminar
             }
 
             InitializeComponent();
-            serializer = new JsonSerializer();
-
         }
 
         //event kad se izlazi iz forme
@@ -138,23 +136,18 @@ namespace Seminar
             if (s.Equals("pictureBox1"))
             {
 
-
                 pictureBox5_Click(this, EventArgs.Empty);
 
                 MessageBox.Show("card thrown");
 
-
             }
-            if (s.Equals("pictureBox2"))
+           else  if (s.Equals("pictureBox2"))
             {
-
                 pictureBox6_Click(this, EventArgs.Empty);
                 MessageBox.Show("card thrown");
-
             }
-            if (s.Equals("pictureBox3"))
+          else if (s.Equals("pictureBox3"))
             {
-
                 pictureBox7_Click(this, EventArgs.Empty);
                 MessageBox.Show("card thrown");
             }

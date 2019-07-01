@@ -1,4 +1,5 @@
-﻿using SimpleTCP;
+﻿using MetroFramework.Forms;
+using SimpleTCP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,8 +53,8 @@ namespace Seminar
                     {
                         var playerGames = server.Games.Where(r => r.Status != "Closed");
 
-                        string s =server.IpAddress.ToString();
-                        if (!s.Equals(""))
+                        string s =server.IpAddress;
+                        if (s!="")
                         {
                             foreach (var g in playerGames)
                             {

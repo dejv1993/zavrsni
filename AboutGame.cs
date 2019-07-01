@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -9,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Seminar
 {
-    partial class AboutGame : Form
+    partial class AboutGame : MetroForm
     {
         public AboutGame()
         {

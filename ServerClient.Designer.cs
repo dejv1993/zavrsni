@@ -1,4 +1,7 @@
 ﻿namespace Seminar
+
+
+
 {
     partial class ServerClient
     {
@@ -28,6 +31,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServerClient));
             this.start = new System.Windows.Forms.Button();
             this.join = new System.Windows.Forms.Button();
@@ -41,7 +45,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // start
@@ -181,11 +187,14 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // metroStyleManager1
+            // 
+            this.metroStyleManager1.Owner = this;
+            // 
             // ServerClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(896, 431);
@@ -199,11 +208,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ServerClient";
             this.Text = "Main Menu";
+            this.TransparencyKey = System.Drawing.Color.LightSteelBlue;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ServerClient_FormClosing);
             this.Load += new System.EventHandler(this.ServerClient_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +234,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
+        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
     }
 }
